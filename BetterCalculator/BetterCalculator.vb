@@ -2,7 +2,7 @@
 'Spring 2025
 'RCET 2265
 'Better Calculator
-' 
+' https://github.com/horsjaco117/BetterCalculator
 
 Option Explicit On
 Option Strict On
@@ -30,22 +30,22 @@ Module BetterCalculator
                     getOutofHere = True
 
                 Catch ex As Exception
-                    If userInput <> "Q" Then
+                    If userInput <> "Q" Then 'Invalid input
 
                         Console.WriteLine("Please enter a whole number")
 
-                    Else
+                    Else 'Quit program
                         getOutofHere = True
                         Console.WriteLine("Have a nice day")
                     End If
                 End Try
-
 
             Loop Until getOutofHere = True
 
             'get second number from user
             'only runs if user has not already quit
             'run until valid number or user quits
+
             getOutofHere = False 'reset flag
             Do While userInput <> "Q" And getOutofHere = False
                 Console.WriteLine("Choose a Number")
@@ -57,20 +57,19 @@ Module BetterCalculator
                     getOutofHere = True
 
                 Catch ex As Exception
-                    If userInput <> "Q" Then
+                    If userInput <> "Q" Then 'Invalid response
                         Console.WriteLine($"{userInput} is not a whole number")
                     Else
-                        getOutofHere = True
+                        getOutofHere = True 'Quit
                         Console.WriteLine("Have a nice day.")
                         Exit Sub
                     End If
                 End Try
             Loop
 
-
             'get user choice only runs if user has not already quit
             'run until valid choice or user quits
-
+            'Options to calculate numbers
             Console.WriteLine("Choose one of the following options" & vbNewLine _
               & "1. add" & vbNewLine _
               & "2. Subtract" & vbNewLine _
@@ -96,7 +95,6 @@ Module BetterCalculator
             End If
 
         Loop While userInput <> "Q"
-
 
     End Sub
 
